@@ -7,5 +7,10 @@ standard-app-packages
 autopublish
 insecure
 iron:router
-bootstrap
+mizzao:bootstrap-3
+underscore
+mirageglobe:html5shivcdn
+mrt:normalize.css
+ian:accounts-ui-bootstrap-3
+accounts-password
 

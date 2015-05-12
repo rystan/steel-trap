@@ -2,12 +2,17 @@
 /* Client and Server Routes */
 /*****************************************************************************/
 Router.configure({
-  layoutTemplate: 'MasterLayout',
-  loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFound'
+   layoutTemplate: 'MasterLayout',
+   loadingTemplate: 'Loading',
+   notFoundTemplate: 'NotFound'
 });
 
-/*
- *  Example:
- *  Router.route('/', {name: 'home'});
-*/
+Router.onBeforeAction(function() {
+  if (! Meteor.userId()) {
+    this.render('salespitch');
+  } else {
+    this.next();
+  }
+});
+
+Router.route('/', {name: 'home'});
